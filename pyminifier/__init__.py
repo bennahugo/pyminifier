@@ -316,7 +316,7 @@ def pyminify(options, files):
             f.write(result)
             f.close()
             new_filesize = os.path.getsize(options.outfile)
-            percent_saved = round(float(new_filesize)/float(filesize) * 100, 2)
+            percent_saved = round(float(new_filesize)/float(filesize+1.0e-9) * 100, 2)
             print((
                 "{_file} ({filesize}) reduced to {new_filesize} bytes "
                 "({percent_saved}% of original size)".format(**locals())))
